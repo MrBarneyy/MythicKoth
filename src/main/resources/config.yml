@@ -1,0 +1,115 @@
+#########################################################################################################
+#
+# ██╗░░██╗░█████╗░████████╗██╗░░██╗
+# ██║░██╔╝██╔══██╗╚══██╔══╝██║░░██║
+# █████═╝░██║░░██║░░░██║░░░███████║
+# ██╔═██╗░██║░░██║░░░██║░░░██╔══██║
+# ██║░╚██╗╚█████╔╝░░░██║░░░██║░░██║
+# ╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝
+#
+# Commands:
+# /mythickoth - mythickoth.use - Displays the list of commands
+# /mythickoth reload - mythickoth.reload - Reload configuration files
+# /mythickoth axe - mythickoth.axe - Getting the selection axe
+# /mythickoth create <koth name> [<koth type>] [<capture/score] - mythickoth.create - Create koth
+# /mythickoth now <koth name> - mythickoth.now - Spawn a koth without cooldown
+# /mythickoth spawn <koth name> - mythickoth.spawn - Spawn a koth
+# /mythickoth stop <koth name> - mythickoth.stop - Stop a koth
+# /mythickoth move <koth name> - mythickoth.stop - Move a koth
+# /mythickoth delete <koth name> - mythickoth.delete - Delete a koth
+# /mythickoth version - no permission - Show plugin version
+# /mythickoth list - mythickoth.list - Get koth list
+# /mythickoth loot <koth name> [<page>] - mythickoth.loot - Change loot for a koth
+# /mythickoth addcommand <koth name> <start/win> <command> - mythickoth.command.add - Add new command
+#
+# Placeholders:
+# %mythickoth_world% - Current koth world
+# %mythickoth_name% - Current koth name
+# %mythickoth_min_x% - Current koth min X
+# %mythickoth_min_y% - Current koth min Y
+# %mythickoth_min_z% - Current koth min Z
+# %mythickoth_max_x% - Current koth max X
+# %mythickoth_max_y% - Current koth max Y
+# %mythickoth_max_z% - Current koth max Z
+# %mythickoth_center_x% - Current koth center X
+# %mythickoth_center_y% - Current koth center Y
+# %mythickoth_center_z% - Current koth center Z
+# %mythickoth_spawn_seconds% - Current koth spawn seconds
+# %mythickoth_spawn_format% - Current koth spawn seconds formatted
+# %mythickoth_capture_seconds% - Current koth capture seconds
+# %mythickoth_capture_format% - Current koth capture seconds formatted
+# %mythickoth_capture_max_seconds% - Current koth max capture seconds
+# %mythickoth_capture_max_formats% - Current koth max capture seconds formatted
+# %mythickoth_score% - Score of player
+# %mythickoth_score_player_<position>% - Player name at position
+# %mythickoth_score_points_<position>% - Points at position
+# %mythickoth_score_team_name_<position>% - Team name at position
+# %mythickoth_score_team_id_<position>% - Team id at position
+# %mythickoth_score_team_leader_<position>% - Team leader name at position
+# %mythickoth_score_player_<position>% - Player name at position
+# %mythickoth_player_name% - Current koth capture player name
+# %mythickoth_team_name% - Current koth capture player team name
+# %mythickoth_team_id% - Current koth capture player team id
+# %mythickoth_team_leader% - Current koth capture player team leader name
+# %mythickoth_active_<koth name>% - Lets you know if a koth is active
+# %mythickoth_cooldown_<koth name>% - Lets you know if a koth is in cooldown
+# %mythickoth_start_<koth name>% - Lets you know if a koth is start
+#
+# Weboldal: https://www.mythicisland.eu
+# Discord: https://dc.mythicisland.eu
+#
+#########################################################################################################
+
+# Displays more information in the console, if you have a problem please enable this option and send errors to support.
+enableDebug: false
+
+# Enables time debugs, is used to measure plugin performance
+enableDebugTime: false
+
+# Number of milliseconds between each PlayerMoveEvent action
+# Allows to cooldown the player not to overload the plugin
+playerMoveEventCooldown: 50
+
+# KOTH üzenetek a chatre
+displayMessageCooldown:
+  - 300
+  - 120
+  - 60
+  - 30
+  - 10
+  - 5
+  - 4
+  - 3
+  - 2
+  - 1
+
+# Display a message during koth cap
+displayMessageKothCap:
+  - 300
+  - 120
+  - 60
+  - 30
+  - 10
+  - 5
+  - 4
+  - 3
+  - 2
+  - 1
+
+noPlayer: 'X'
+
+noFaction: 'X'
+
+noKoth: 'X'
+
+schedulerMillisecond: 1000
+
+removeChestSec: 120
+
+# Value that will be used for score placeholders if the position does not exist.
+defaultPlayerResult:
+  playerName: "X"
+  points: 0
+  teamName: "X"
+  teamId: "X"
+  teamLeader: "X"

@@ -1,0 +1,180 @@
+# Available placeholders:
+# - %online-player% - Allows to run the order to all online players of the team
+# - %name% - Koth name
+# - %world% - World name
+# - %minX% - Min location X
+# - %minY% - Min location Y
+# - %minZ% - Min location Z
+# - %maxX% - Max location X
+# - %maxY% - Max location Y
+# - %maxZ% - Max location Z
+# - %centerX% - Center location X
+# - %centerY% - Center location Y
+# - %centerZ% - Center location Z
+# - %spawnSeconds% - Second before koth spawn
+# - %spawnFormat% - Time format before koth spawn
+# - %playerName% - Current player name
+# - %teamName% - Current player team name
+# - %teamId% - Current player team id
+# - %teamLeader% - Current player team leader name
+# - %captureSeconds% - Capture seconds (only for CAPTURE type)
+# - %captureFormat% - Capture time format (only for CAPTURE type)
+
+# Koth display name
+name: test
+
+# Koth type
+type: CAPTURE
+
+# Capture time or score to achieve
+capture: 30
+
+# Time in seconds to spawn koth with /koth spawn command
+cooldownStart: 300
+
+# Time in seconds to automatically stop koth
+stopAfterSeconds: 3600
+
+# Activate the message when a player starts capturing the koth
+enableStartCapMessage: true
+
+# Activate the message when a player loses the koth capture
+enableLooseCapMessage: true
+
+# Commands that will be executed when the koth is launched
+startCommands: []
+
+# Commands that will be executed when the koth is won by a player
+endCommands: []
+
+# Allows to run random commands at the end of the koth
+randomEndCommands:
+  # Number of commands to execute
+  commandAmount: 2
+  # List of possible commands
+  commands:
+    - percent: 20 # Command percent
+      commands: # Commands list
+        - "bc random command #1"
+    - percent: 20 # Command percent
+      commands: # Commands list
+        - "bc random command #2"
+    - percent: 10 # Command percent
+      commands: # Commands list
+        - "bc random command #3"
+    - percent: 40 # Command percent
+      commands: # Commands list
+        - "bc random command #4"
+
+# First location
+minLocation:
+  world: world
+  x: 0
+  y: 0
+  z: 0
+
+# Second location
+manLocation:
+  world: world
+  x: 0
+  y: 0
+  z: 0
+
+scoreboard:
+  cooldown:
+    enable: true
+    title: "&f&l⌈ &7&oMythicKoth &f&l⌋"
+    lines:
+      - "&r"
+      - "#16db47Elhelyezkedés:"
+      - " #636363◊ #ffffffX: %centerX% Y: %centerY% Z: %centerZ%"
+      - "&r"
+      - "#16db47Kezdődik:"
+      - " #636363◊ #ffffff%spawnFormat%"
+      - "&r"
+  start:
+    enable: true
+    title: "&f&l⌈ &7&oMythicKoth &f&l⌋"
+    lines:
+      - "&r"
+      - "#16db47Location"
+      - " #636363◊ #ffffffX: %centerX% Y: %centerY% Z: %centerZ%"
+      - "&r"
+      - "#16db47Player:"
+      - " #636363◊ #ffffff%playerName%"
+      - "&r"
+      - "#16db47Time left:"
+      - " #636363◊ #ffffff%captureFormat%"
+      - "&r"
+
+hologram:
+  enable: false
+  lines:
+    - "&fCoordinate: &b%centerX% %centerY% %centerZ%"
+    - ""
+    - "&fTimer: &b%captureFormat%"
+  world: world
+  x: 0
+  y: 0
+  z: 0
+
+# DISCORD WEBHOOK
+
+webhook:
+  enable: true
+  url: "https://discord.com/api/webhooks/1187068418923438190/eHBOLr52d7S28rcMqtNAdHbCi-9Gpk1tG0IU1ulbf3p6z9IbM2UqoSl9MxRT1TdX5k-W"
+  # Available event:
+  # - SPAWN
+  # - START
+  # - STOP
+  # - START_CAP
+  # - WIN
+  # - LOOSE
+  events:
+    START:
+      event: START
+      title: 'Start Koth'
+      description: "Koth %name% has been started !"
+      # url: "<your url>"
+      color:
+        r: 40
+        g: 240
+        b: 40
+      footer:
+        text: zKoth
+        iconUrl: https://groupez.dev/storage/images/9.png
+      # thumbnail: "<your thumbnail>"
+      # image: "<your image>
+      # author:
+      # name: "Maxlego08"
+      # url: ""
+      # iconUrl: ""
+      # fields:
+      # - name: Info
+      #   value: "A new koth"
+      #   inline: false
+
+loot:
+  # Takes 10 items from the list of items, to put all the items you must put -1
+  random: 3
+  # Available type :
+  # DROP
+  # CHEST
+  # INVENTORY
+  # NONE
+  type: NONE
+  # Use /koth loot <koth name>
+  items: []
+
+
+# Allows blacklist of team IDs so that it does not participate in koth, in this example, teams with ID 0 and -1 are blacklist
+blacklistTeamId:
+  - "0"
+  - "-1"
+
+# Configuration for the Progress Bar. Use by placeholders
+progressBar:
+  length: 20
+  symbol: "|"
+  completedColor: "#2fedc7"
+  notCompletedColor: "#8f8f8f"
