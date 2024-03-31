@@ -1,10 +1,10 @@
 name: MythicKoth
 author: MrBarneyy
-main: hu.mrbarneyy.mythickoth.KothPlugin
+main: main.hu.mrbarneyy.mythickoth.KothPlugin
 website: www.mythicisland.eu
 description: MythicKoth plugin by MrBarneyy
 version: ${project.version}
-api-version: 1.19
+api-version: 1.13
 softdepend:
   - PlaceholderAPI
   - FeatherBoard
@@ -24,5 +24,3 @@ softdepend:
   - HuskTowns
   - Lands
 commands:
-  mythickoth:
-    aliases: mkoth, koth
