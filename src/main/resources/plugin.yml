@@ -4,7 +4,7 @@ main: hu.mrbarneyy.mythickoth.KothPlugin
 website: www.mythicisland.eu
 description: MythicKoth plugin by MrBarneyy
 version: ${project.version}
-api-version: 1.13
+api-version: 1.19
 softdepend:
   - PlaceholderAPI
   - FeatherBoard
